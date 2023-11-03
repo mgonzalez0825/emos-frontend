@@ -1,6 +1,6 @@
   
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom';
 class HeaderComponent extends Component {
 
     constructor(props){
@@ -49,7 +49,7 @@ class HeaderComponent extends Component {
                                 <label className="nav-link" >EMOS </label>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link " href="http://localhost:3000/admin/dashboard" >DASHBOARD </a>
+                                <a className="nav-link " href="/admin/dashboard" >DASHBOARD </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="http://localhost:3000/admin/departments">DEPARTMENT<span class="sr-only">(current)</span></a>
