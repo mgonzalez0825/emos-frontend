@@ -26,7 +26,7 @@ class HeaderComponent extends Component {
                <header className='header'>
                <nav className="navbar navbar-expand-lg navbar-light bg-light ml-4 " >
                     <div className="container-fluid">
-                        <a className="navbar-brand" href="http://localhost:3000/admin/dashboard">
+                        <a className="navbar-brand" href="/admin/dashboard">
                             < svg id="logo-64" width="80" height="80" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path className="ccustom" d="M27.5308 40.1395C27.5757 35.5502 26.4122 31.8182 24.9322 31.8037C23.4521 31.7893 22.2159 35.4979 22.1711 40.0871C22.1262 44.6764 23.2897 48.4085 24.7697 48.4229C26.2498 48.4374 27.486 44.7288 27.5308 40.1395Z" fill="black">
                                 </path>
@@ -52,20 +52,20 @@ class HeaderComponent extends Component {
                                 <a className="nav-link " href="/admin/dashboard" >DASHBOARD </a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="http://localhost:3000/admin/departments">DEPARTMENT<span class="sr-only">(current)</span></a>
+                                <a className="nav-link" href="/admin/departments">DEPARTMENT<span class="sr-only">(current)</span></a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="http://localhost:3000/admin/jobs">JOBS</a>
+                                <a className="nav-link" href="/admin/jobs">JOBS</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="http://localhost:3000/admin/employees">EMPLOYEES</a>
+                                <a className="nav-link" href="/admin/employees">EMPLOYEES</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="http://localhost:3000/admin/scheduler">SCHEDULER</a>
+                                <a className="nav-link" href="/admin/scheduler">SCHEDULER</a>
                             </li>
                             </ul>
                             <span className="nav-link">
-                            <a className="nav-link" href="http://localhost:3000/sign-out">SIGN OUT</a>
+                            <a className="nav-link" href="/sign-out">SIGN OUT</a>
                             </span>
                         </div>
 
