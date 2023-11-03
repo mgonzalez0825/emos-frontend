@@ -33,7 +33,7 @@ return (
             <Router>
             <Routes>
               <Route path = '/*' element = {<DashboardComponent/>}></Route>
-               <Route path = '/admin/dashboard' element = {<DashboardComponent/>}></Route>
+               <Route path = 'https://emos.netlify.app/admin/dashboard' element = {<DashboardComponent/>}></Route>
                <Route path = 'https://emos.netlify.app/admin/departments' element = {<DepartmentComponent/>}></Route>
                <Route path = '/admin/departments/add-department' element = {<CreateDepartmentComponent/>}></Route>
                <Route path = '/admin/departments/update-department/:deptNo' element = {<UpdateDepartmentComponent/>}></Route>
