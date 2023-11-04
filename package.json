@@ -2,6 +2,8 @@
   "name": "emos-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://emos.netlify.app/",
+  
   "dependencies": {
     "@fullcalendar/daygrid": "^6.1.5",
     "@fullcalendar/interaction": "^6.1.5",
