@@ -32,7 +32,7 @@ return (
           <div className="container">
             <Router>
             <Routes>
-              <Route path = '/*' element = {<DashboardComponent/>}></Route>
+              {/* <Route path = '/*' element = {<DashboardComponent/>}></Route> */}
                <Route path = '/admin/dashboard' element = {<DashboardComponent/>}></Route>
                <Route path = '/admin/departments' element = {<DepartmentComponent/>}></Route>
                <Route path = '/admin/departments/add-department' element = {<CreateDepartmentComponent/>}></Route>
