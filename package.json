@@ -2,7 +2,7 @@
   "name": "emos-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://emos.netlify.app/dashboard",
+  "homepage": "https://emos.netlify.app",
 
 
   "dependencies": {
