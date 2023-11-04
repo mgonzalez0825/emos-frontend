@@ -1,5 +1,7 @@
   
 import React, { Component } from 'react';
+import { Router,Route,Link } from 'react-router-dom';
+
 class HeaderComponent extends Component {
 
     constructor(props){
@@ -51,20 +53,25 @@ class HeaderComponent extends Component {
                                 <a className="nav-link " href="/admin/dashboard" >DASHBOARD </a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/admin/departments">DEPARTMENT<span class="sr-only">(current)</span></a>
+                                {/* <a className="nav-link" href="/admin/departments">DEPARTMENT<span class="sr-only">(current)</span></a> */}
+                                <Link  className="nav-link" to="/admin/departments" exact>Department</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/admin/jobs">JOBS</a>
+                                {/* <a className="nav-link" href="/admin/jobs">JOBS</a> */}
+                                <Link className="nav-link" to="/admin/departments">Department</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/admin/employees">EMPLOYEES</a>
+                                {/* <a className="nav-link" href="/admin/employees">EMPLOYEES</a> */}
+                                <Link className="nav-link" to="/admin/departments">Department</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/admin/scheduler">SCHEDULER</a>
+                                {/* <a className="nav-link" href="/admin/scheduler">SCHEDULER</a> */}
+                                <Link className="nav-link" to="/admin/departments">Department</Link>
                             </li>
                             </ul>
                             <span className="nav-link">
-                            <a className="nav-link" href="/sign-out">SIGN OUT</a>
+                            {/* <a className="nav-link" href="/sign-out">SIGN OUT</a> */}
+                            <Link  className="nav-link" to="/admin/departments">Department</Link>
                             </span>
                         </div>
 
@@ -73,6 +80,8 @@ class HeaderComponent extends Component {
                     </nav>
                 
                 </header> 
+             
+
              
         );
     }

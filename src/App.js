@@ -25,12 +25,13 @@ import AddEventComponentDash from './components/dashboardComponents/AddEventComp
 
 function App(){
 return (
-  <div>
+  <Router>
+ <div>
     
       <div className='container'>
        <HeaderComponent/>
           <div className="container">
-            <Router>
+            
             <Routes>
               <Route path = '/*' element = {<DashboardComponent/>}></Route>
                <Route path = '/admin/dashboard' element = {<DashboardComponent/>}></Route>
@@ -51,12 +52,13 @@ return (
                <Route path = '/admin/scheduler/add-event' element = {<AddEventComponent/>}></Route>
                <Route path = '/admin/dashboard/add-event' element = {<AddEventComponentDash/>}></Route>
           </Routes>
-          </Router>  
+           
           </div>
         <FooterComponent/>
       </div>
     
      </div>
+     </Router> 
 );
 }
 
