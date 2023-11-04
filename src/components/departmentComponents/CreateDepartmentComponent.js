@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import departmentService from '../../services/departmentService';
+import DepartmentService from '../../services/departmentService';
 import { withRouter } from '../withRouter/withRouter';
 
 class  CreateDepartmentComponent extends Component {
@@ -93,6 +93,7 @@ class  CreateDepartmentComponent extends Component {
         let department = {deptName:this.state.deptName, parentDept:this.state.parentDept, location:this.state.location,managerNo:this.state.managerNo,employees:this.state.employees};
         console.log("department => " + JSON.stringify(department));
 
+        const departmentService = new DepartmentService();
         departmentService.createDepartment(department).then(res =>{
             this.props.navigate('/admin/departments');
         });

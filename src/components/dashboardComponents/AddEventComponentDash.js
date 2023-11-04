@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import moment from 'moment';
-import schedulerService from '../../services/schedulerService';
-import employeeService from '../../services/employeeService';
-import jobsService from '../../services/jobsService';
+import SchedulerService from '../../services/schedulerService';
+import EmployeeService from '../../services/employeeService';
+import JobsService from '../../services/jobsService';
 import { withRouter } from '../withRouter/withRouter';
 
 class AddEventComponent extends Component {
@@ -35,10 +35,12 @@ class AddEventComponent extends Component {
 
   componentDidMount() {
 
+    const jobsService = new JobsService();
     jobsService.getAllJobs().then((res) => {
       this.setState({ eventJobs: res.data });
     });
-
+    
+    const employeeService = new EmployeeService();
     employeeService.getAllEmployees().then((res) => {
       this.setState({ eventEmployees: res.data });
     });
@@ -64,6 +66,7 @@ class AddEventComponent extends Component {
   changeJobIdHandler = (event) => {
     const selectedJobId = event.target.value;
 
+    const jobsService = new JobsService();
     jobsService.getJobById(selectedJobId)
       .then(response => {
         
@@ -86,6 +89,7 @@ class AddEventComponent extends Component {
   changeEmpIdHandler = (event) => {
     const selectedEmployeeId = event.target.value;
 
+    const employeeService = new EmployeeService();
     employeeService.getEmployeeById(selectedEmployeeId)
       .then(response => {
        
@@ -167,7 +171,7 @@ class AddEventComponent extends Component {
         console.log("event => " + JSON.stringify(event));
 
        
-
+        const schedulerService = new SchedulerService();
         schedulerService.createEvent(event).then(res =>{
             this.props.navigate('/admin/dashboard');
         })

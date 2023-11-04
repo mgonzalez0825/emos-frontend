@@ -45,8 +45,9 @@ class AddEmployeeDetailsComponent extends Component {
     
 
     componentDidMount(){
-       
-        EmployeeService.getEmployeeById(this.state.empId).then((res) => {
+        
+        const employeeService = new EmployeeService();
+        employeeService.getEmployeeById(this.state.empId).then((res) => {
             let employee = res.data;
             this.setState({firstName:employee.firstName,lastName:employee.lastName,emailId:employee.emailId,password:employee.password,employeeDetails:
                             {ssn:employee.employeeDetails.ssn,phoneNumber:employee.employeeDetails.phoneNumber,employeeType:employee.employeeDetails.employeeType,
@@ -261,7 +262,8 @@ class AddEmployeeDetailsComponent extends Component {
          
         console.log("employee => " + JSON.stringify(employeeDetails));
         
-        EmployeeService.updateEmployeeDetails(employeeDetails , this.state.empId).then(res =>{
+        const employeeService = new EmployeeService();
+        employeeService.updateEmployeeDetails(employeeDetails , this.state.empId).then(res =>{
             this.props.navigate('/admin/employees');
         })
         }

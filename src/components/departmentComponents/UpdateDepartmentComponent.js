@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import departmentService from '../../services/departmentService';
+import DepartmentService from '../../services/departmentService';
 import { withRouter } from '../withRouter/withRouter';
 
 class  UpdateDepartmentComponent extends Component {
@@ -27,7 +27,7 @@ class  UpdateDepartmentComponent extends Component {
 
 
     componentDidMount(){
-       
+        const departmentService = new DepartmentService();
         departmentService.getDepartmentById(this.state.deptNo).then((res) => {
             let department = res.data;
             this.setState({deptName:department.deptName, parentDept:department.parentDept,location:department.location,managerNo:department.managerNo});
@@ -110,6 +110,7 @@ class  UpdateDepartmentComponent extends Component {
         let department = {deptName:this.state.deptName, parentDept:this.state.parentDept, location:this.state.location,managerNo:this.state.managerNo};
         console.log("department => " + JSON.stringify(department));
 
+        const departmentService = new DepartmentService();
         departmentService.updateDepartment(department , this.state.deptNo).then(res =>{
             this.props.navigate('/admin/departments');
         })

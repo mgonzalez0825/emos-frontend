@@ -1,6 +1,6 @@
 import axios from "axios";  
 
-const JOBS_API_BASE_URL = process.env.REACT_APP_API_URL + '/jobs';
+const JOBS_API_BASE_URL = 'http://localhost:8080/api/v1/jobs';
 
 class JobsService {
 
@@ -25,4 +25,4 @@ class JobsService {
     }
 }
 
-export default new JobsService()
+export default JobsService;

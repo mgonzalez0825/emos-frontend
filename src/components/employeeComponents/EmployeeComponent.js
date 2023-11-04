@@ -35,7 +35,8 @@ deleteEmployee(empId){
     
     
     if (window.confirm("Are you sure you want to delete this employee, all the info will be lost?")){
-    EmployeeService.deleteEmployee(empId).then( res => {
+        const employeeService = new EmployeeService();
+        employeeService.deleteEmployee(empId).then( res => {
         this.setState({employees:this.state.employees.filter(employee => employee.empId !== empId)});
     
 });
@@ -49,7 +50,8 @@ viewEmployee(empId){
 
 
    componentDidMount(){
-        EmployeeService.getAllEmployees().then((res) => {
+    const employeeService = new EmployeeService();    
+    employeeService.getAllEmployees().then((res) => {
             this.setState({employees: res.data});
             return console.log(this.state.employees)
         });

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import employeeService from '../../services/employeeService';
+import EmployeeService from '../../services/employeeService';
 import { withRouter } from '../withRouter/withRouter';
-import departmentService from '../../services/departmentService';
+import DepartmentService from '../../services/departmentService';
 
 
 class CreateEmployeeComponent extends Component {
@@ -38,6 +38,7 @@ class CreateEmployeeComponent extends Component {
     }
 
     componentDidMount(){
+        const departmentService = new DepartmentService();
         departmentService.getAllDepartments().then((res) => {
             this.setState({departments: res.data});
             
@@ -145,7 +146,7 @@ class CreateEmployeeComponent extends Component {
 
        
       
-
+        const employeeService = new EmployeeService();
         employeeService.createEmployee(employee).then(res =>{
             this.props.navigate('/admin/employees');
         })

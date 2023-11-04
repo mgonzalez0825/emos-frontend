@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import jobsService from '../../services/jobsService';
-import departmentService from '../../services/departmentService';
+import JobsService from '../../services/jobsService';
+import DepartmentService from '../../services/departmentService';
 import { withRouter } from '../withRouter/withRouter';
 
 class UpdateJobComponent extends Component {
@@ -29,13 +29,15 @@ class UpdateJobComponent extends Component {
     }
 
     componentDidMount(){
-       
+        
+            const jobsService = new JobsService();
             jobsService.getJobById(this.state.jobId).then((res) => {
                 let job = res.data;
                 this.setState({jobTitle:job.jobTitle, jobType:job.jobType, jobPayRange:job.jobPayRange,jobDescription:job.jobDescription});
                 
             });
-    
+            
+            const departmentService = new DepartmentService();
             departmentService.getAllDepartments().then((res) => {
                 this.setState({departments: res.data});
                 
@@ -141,7 +143,7 @@ class UpdateJobComponent extends Component {
         console.log("job => " + JSON.stringify(job));
 
        
-
+        const jobsService = new JobsService();
         jobsService.updateJob(job,this.state.jobId).then(res =>{
             this.props.navigate('/admin/jobs');
         })

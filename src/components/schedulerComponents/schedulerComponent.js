@@ -48,7 +48,8 @@ class SchedulerComponent extends Component {
 
       componentDidMount() {
         
-        SchedulerService.getAllEvents()
+        const schedulerService = new SchedulerService();
+        schedulerService.getAllEvents()
           .then(response => {
             
             const events = response.data.map(event => ({

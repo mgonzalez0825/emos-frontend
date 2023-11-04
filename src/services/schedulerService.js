@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const SCHEDULER_API_BASE_URL = process.env.REACT_APP_API_URL + 'scheduler';
+const SCHEDULER_API_BASE_URL = 'http://localhost:8080/api/v1/scheduler';
 
 class schedulerService {
 
@@ -27,4 +27,4 @@ class schedulerService {
 
 }
 
-export default new schedulerService()
+export default schedulerService;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import jobsService from '../../services/jobsService';
+import JobsService from '../../services/jobsService';
 import { withRouter } from '../withRouter/withRouter';
 
 class ViewJobComponent extends Component {
@@ -17,6 +17,7 @@ class ViewJobComponent extends Component {
     }
 
     componentDidMount(){
+        const jobsService = new JobsService();
         jobsService.getJobById(this.state.jobId).then((res) => {
             this.setState({job: res.data});
         })

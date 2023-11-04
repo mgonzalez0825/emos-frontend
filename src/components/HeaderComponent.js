@@ -1,6 +1,5 @@
   
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 
 class HeaderComponent extends Component {
@@ -51,29 +50,23 @@ class HeaderComponent extends Component {
                                 <label className="nav-link" >EMOS </label>
                             </li>
                             <li className="nav-item">
-                                {/* <a className="nav-link " href="/admin/dashboard" >DASHBOARD </a> */}
-                                <Link  className="nav-link" to="/admin/departments" exact>Department</Link>
+                                <a className="nav-link " href="/admin/dashboard" >DASHBOARD </a>
                             </li>
                             <li className="nav-item">
-                                {/* <a className="nav-link" href="/admin/departments">DEPARTMENT<span class="sr-only">(current)</span></a> */}
-                                <Link  className="nav-link" to="/admin/employees" exact>EMPLOYEE</Link>
+                                <a className="nav-link" href="/admin/departments">DEPARTMENT<span class="sr-only">(current)</span></a>
                             </li>
                             <li className="nav-item">
-                                {/* <a className="nav-link" href="/admin/jobs">JOBS</a> */}
-                                <Link className="nav-link" to="/admin/departments">Department</Link>
+                                <a className="nav-link" href="/admin/jobs">JOBS</a>
                             </li>
                             <li className="nav-item">
-                                {/* <a className="nav-link" href="/admin/employees">EMPLOYEES</a> */}
-                                <Link className="nav-link" to="/admin/departments">Department</Link>
+                                <a className="nav-link" href="/admin/employees">EMPLOYEES</a>
                             </li>
                             <li className="nav-item">
-                                {/* <a className="nav-link" href="/admin/scheduler">SCHEDULER</a> */}
-                                <Link className="nav-link" to="/admin/departments">Department</Link>
+                                <a className="nav-link" href="/admin/scheduler">SCHEDULER</a>
                             </li>
                             </ul>
                             <span className="nav-link">
-                            {/* <a className="nav-link" href="/sign-out">SIGN OUT</a> */}
-                            <Link  className="nav-link" to="/admin/departments">Department</Link>
+                            <a className="nav-link" href="/sign-out">SIGN OUT</a>
                             </span>
                         </div>
 
@@ -82,8 +75,6 @@ class HeaderComponent extends Component {
                     </nav>
                 
                 </header> 
-             
-
              
         );
     }

@@ -40,7 +40,8 @@ class JobsComponent extends Component {
     }
 
     componentDidMount(){
-        JobsService.getAllJobs().then((res) => {
+        const jobsService = new JobsService();
+        jobsService.getAllJobs().then((res) => {
             this.setState({jobs: res.data});
             return console.log(this.state.jobs)
         });

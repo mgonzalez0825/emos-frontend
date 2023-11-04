@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import EmployeeService from '../../services/employeeService';
 import { withRouter } from '../withRouter/withRouter';
-import departmentService from '../../services/departmentService';
+import DepartmentService from '../../services/departmentService';
+// import departmentComponent from '../departmentComponents/DepartmentComponent';
 
 
 class UpdateEmployeeComponent extends Component {
@@ -46,12 +47,14 @@ class UpdateEmployeeComponent extends Component {
 
     componentDidMount(){
        
-        EmployeeService.getEmployeeById(this.state.empId).then((res) => {
+        const employeeService = new EmployeeService();
+        employeeService.getEmployeeById(this.state.empId).then((res) => {
             let employee = res.data;
             this.setState({firstName:employee.firstName,lastName:employee.lastName,emailId:employee.emailId,password:employee.password,employeeDetails:employee.employeeDetails});
             
         });
 
+        const departmentService = new DepartmentService();
         departmentService.getAllDepartments().then((res) => {
             this.setState({departments: res.data});
             
@@ -154,7 +157,9 @@ class UpdateEmployeeComponent extends Component {
             let employee = {firstName:this.state.firstName, lastName:this.state.lastName, emailId:this.state.emailId,password:this.state.password,
                         employeeDetails:this.state.employeeDetails,department:this.state.department};
         console.log("employee => " + JSON.stringify(employee));
-        EmployeeService.updateEmployee(employee , this.state.empId).then(res =>{
+        
+        const employeeService = new EmployeeService();
+        employeeService.updateEmployee(employee , this.state.empId).then(res =>{
             this.props.navigate('/admin/employees');
         })
         }

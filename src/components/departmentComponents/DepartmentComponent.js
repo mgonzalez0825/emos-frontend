@@ -35,7 +35,8 @@ class DepartmentComponent extends Component {
      deleteDepartment(deptNo){
         
         if (window.confirm("Are you sure you want to delete this department , all associated jobs and employees will be deleted !!!")){
-        DepartmentService.deleteDepartment(deptNo).then( res => {
+            const departmentService = new DepartmentService();
+            departmentService.deleteDepartment(deptNo).then( res => {
             this.setState({departments:this.state.departments.filter(department => department.deptNo !== deptNo)});
         
         });
@@ -47,7 +48,8 @@ class DepartmentComponent extends Component {
     }
 
      componentDidMount(){
-        DepartmentService.getAllDepartments().then((res) => {
+        const departmentService = new DepartmentService();
+        departmentService.getAllDepartments().then((res) => {
             this.setState({departments: res.data});
         });
     }
