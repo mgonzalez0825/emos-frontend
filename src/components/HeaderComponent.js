@@ -1,7 +1,7 @@
   
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { withRouter } from './withRouter/withRouter';
+
 
 class HeaderComponent extends Component {
 
@@ -56,7 +56,7 @@ class HeaderComponent extends Component {
                             </li>
                             <li className="nav-item">
                                 {/* <a className="nav-link" href="/admin/departments">DEPARTMENT<span class="sr-only">(current)</span></a> */}
-                                <Link  className="nav-link" to="/admin/departments" exact>Department</Link>
+                                <Link  className="nav-link" to="/admin/employees" exact>EMPLOYEE</Link>
                             </li>
                             <li className="nav-item">
                                 {/* <a className="nav-link" href="/admin/jobs">JOBS</a> */}
@@ -89,5 +89,5 @@ class HeaderComponent extends Component {
     }
 }
 
-export default withRouter(HeaderComponent);
+export default HeaderComponent;
 
