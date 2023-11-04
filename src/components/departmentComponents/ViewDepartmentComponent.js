@@ -9,7 +9,7 @@ class ViewDepartmentComponent extends Component {
     
         this.state = {
             deptNo:this.props.params.deptNo,
-            department : {}
+            department : []
         }
     
     
