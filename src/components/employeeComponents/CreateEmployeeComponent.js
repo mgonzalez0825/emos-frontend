@@ -24,7 +24,6 @@ class CreateEmployeeComponent extends Component {
                 salary:'',
                 hireDate:''},
             department: {deptNo:''}
-
         }
 
        
