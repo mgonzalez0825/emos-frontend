@@ -1,0 +1,23 @@
+# version: '2.23.0'
+# services:
+#   api:
+#     build: ./api
+#     container_name: api_c
+#     ports:
+#       -'4000:4000'
+#     volumes:
+#       -./api:/app
+#       -./app/node_modules
+#   emos:
+#     build: ./emos
+#     container_name: emos
+#     ports:
+#       -'3000:3000'
+#     volumes:
+#       -./emos:/app
+#       -./app/node_modules
+#     stding_open: true
+#     tty: true
+
+
+# type docker compose up
