@@ -1,6 +1,6 @@
 import axios from "axios";  
 
-const JOBS_API_BASE_URL = 'http://0.0.0.0:9090/api/v1/jobs';
+const JOBS_API_BASE_URL = 'http://localhost:9090/api/v1/jobs';
 
 class JobsService {
 
